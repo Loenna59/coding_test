@@ -15,8 +15,9 @@ int solution(int num) {
             answer = i;
             break;
         }
-
-        result = result & 1? result * 3 + 1 : result / 2;
+        
+        // result >> 1 == result / 2
+        result = result & 1? result * 3 + 1 : result >> 1;
     }
     
     return answer;
