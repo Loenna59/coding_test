@@ -5,7 +5,7 @@
 using namespace std;
 
 int solution(vector<string> babbling) {
-        int answer = 0;
+    int answer = 0;
 
     const vector<string> nephew_babbling({ "aya", "ye", "woo", "ma"});
 
