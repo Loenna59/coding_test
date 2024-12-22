@@ -9,48 +9,22 @@ int solution(vector<string> babbling) {
 
     const vector<string> nephew_babbling({ "aya", "ye", "woo", "ma"});
 
-    string prev;
-    bool loop = true;
-
-    for (string b : babbling)
+    for (string element : babbling)
     {
-        prev.clear();
-        loop = true;
-
-        while (!b.empty() && loop)
+        for (string str : nephew_babbling)
         {
-           auto str_it = find_if(nephew_babbling.begin(), nephew_babbling.end(), [b] (string s) { return s[0] == b[0]; });
-
-            if (str_it == nephew_babbling.end())
+            int position = element.find(str);
+            if (position != string::npos)
             {
-                loop = false;
-                break;
+                element.erase(element.begin() + position, element.begin() + position + str.size());
             }
 
-            string str = *str_it;
-
-            if (prev == str)
+            if (element.empty())
             {
-                loop = false;
+                answer++;
                 break;
             }
-
-            if (b.substr(0, str.size()) != str)
-            {
-                loop = false;
-                break;
-            }
-
-            prev = str;
-
-            b.erase(b.begin(), b.begin() + str.size());
         }
-
-        if (b.empty())
-        {
-            answer++;
-        }
-        
     }
 
     return answer;
