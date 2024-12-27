@@ -2,14 +2,14 @@
 
 int main()
 {
-    long n;
-    scanf("%ld", &n);
+    int n;
+    scanf("%d", &n);
 
-    for (long i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
-        long x, y;
-        scanf("%ld %ld", &x, &y);
-        printf("%ld\n", x + y);
+        int x, y;
+        scanf("%d %d", &x, &y);
+        printf("%d\n", x + y);
     }
 
     return 0;
