@@ -1,11 +1,9 @@
-#include <iostream>
-
-using namespace std;
+#include <cstdio>
 
 int main()
 {
     int n;
-    cin >> n;
+    scanf("%d", &n);
 
     int min;
     int max;
@@ -13,7 +11,7 @@ int main()
     for (int i = 0; i < n; i++)
     {
         int elem;
-        cin >> elem;
+        scanf("%d", &elem);
 
         if (i == 0)
         {
@@ -33,7 +31,7 @@ int main()
         }
     }
 
-    cout << min << " " << max;
+    printf("%d %d", min, max);
 
     return 0;
 }
