@@ -1,58 +1,31 @@
-#include <iostream>
 #include <string>
 #include <vector>
+#include <iostream>
+
+using namespace std;
 
 int main()
 {
-    int num;
-    std::cin >> num;
+    int T;
 
-    std::vector<std::string> vec;
+    cin >> T;
 
-    for (int i = 0; i < num; i++)
+    vector<string> cases;
+
+    for (int i = 0; i < T; i++)
     {
-        std::string str;
-        std::cin >> str;
-        vec.push_back(str);
+        string c;
+        cin >> c;
+        cases.push_back(c);
     }
-    
-    std::string seperator = ",";
 
-    for (int i = 0; i < num; i++)
+    for (int i = 0; i < cases.size(); i++)
     {
-        int cur_positon = 0;
-        int position;
-        
-        std::string str = vec[i];
-        std::vector<int> nums;
-        
-        while (true)
-        {
-            position = str.find(seperator, cur_positon);
-            if (position == str.npos)
-            {
-                std::string end_str = str.substr(cur_positon);
-                nums.push_back(std::stoi(end_str));
-                break;
-            }
-            
-            int len = position - cur_positon;
+        int A = stoi(cases[i].substr(0, 1));
+        int B = stoi(cases[i].substr(2));
 
-            std::string substr = str.substr(cur_positon, len);
-            nums.push_back(std::stoi(substr));
-
-            cur_positon = position + 1;
-        }
-
-        int sum = 0;
-        
-        for (int i = 0; i < nums.size(); i++)
-        {
-            sum += nums[i];
-        }
-
-        std::cout << sum << std::endl;
+        cout << A + B << "\n";
     }
-    
+
     return 0;
 }
