@@ -20,7 +20,7 @@ int solution(vector<int> priorities, int location) {
 
     while (!queue.empty())
     {
-        pair<char, int> proccess = queue.front();
+        pair<int, int> proccess = queue.front();
         queue.pop();
 
         if (proccess.second == priorities[answer])
