@@ -19,29 +19,20 @@ int main()
         std::cin >> values[i];
     }
 
-    int count = k / values.back();
-    int remain = k % values.back();
-    
-    if (remain == 0)
-    {
-        std::cout << count;
-
-        return 0;
-    }
-
+    int count = 0;
     int index = values.size() - 1;
 
     while (index >= 0)
     {
-        index--;
-
-        count += remain / values[index];
-        remain = remain % values[index];
-
-        if (remain == 0)
+        count += k / values[index];
+        k = k % values[index];
+        
+        if (k == 0)
         {
             break;
         }
+        
+        index--;
     }
 
     std::cout << count;
