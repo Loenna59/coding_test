@@ -12,7 +12,7 @@ int main()
 
     std::cin >> n >> k;
 
-    std::vector<long> values(n);
+    std::vector<int> values(n);
 
     for (int i = 0; i < n; i++)
     {
