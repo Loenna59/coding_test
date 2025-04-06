@@ -96,9 +96,11 @@ int main()
 
     std::string p = "I";
 
-    for (int i = 0; i < n; i++)
+    p.reserve(2 * n + 1);  // 미리 메모리 확보 (최적화)
+
+    for (int i = 0; i < n; i++) 
     {
-        p.insert(1, "OI");
+        p += "OI";
     }
 
     std::cout << kmp_search(s, p);
